@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUNTO DE EQUILIBRIO</title>
+</head>
+<body>
+    
+    <H1>DATOS DE LA EMPRESA</H1>
+
+  <input type="number" id="Precio" placeholder="precio" value="">
+  <input type="number" id="costoV" placeholder="Costo Variable" value="">
+  <input type="number" id="costoF" placeholder="costo Fijo" value="">
+  <input type="number" id="contribucionU" placeholder="contribucion unidad">
+  <input type="number" id="MargenContribucion" placeholder="Margen de Contribucion">
+  <input type="number" id="Unidades" placeholder="">
+
+    <br>
+    <button onclick="contribucionUnidad()">contribucion por unidad</button>
+    <button onclick="margen()">Margen de contribucion</button>
+    <button onclick="contribucionT()">Unidades a vender</button>
+
+            <h1>PUNTO DE EQUILIBRIO</h1>
+         
+    CONCEPTO UNIDADES<input type="number" id="Unidades1" placeholder="">
+    <input type="number" id="Unidades2" placeholder="">
+    <input type="number" id="Unidades3" placeholder="">
+    <input type="number" id="Unidades4" placeholder="">
+    <input type="number" id="Unidades5" placeholder="">
+    <input type="number" id="Unidades6" placeholder="">
+    <br>
+    
+  VENTAS<input type="number" id="VENTA1" placeholder="">
+  <input type="number" id="VENTA2" placeholder="">
+  <input type="number" id="VENTA3" placeholder="">
+  <input type="number" id="VENTA4" placeholder="">
+  <input type="number" id="VENTA5" placeholder="">
+  <input type="number" id="VENTA6" placeholder="">
+ <br>
+ COSTO VARIABLE<input type="number" id="costoVariable1" placeholder="">
+ <input type="number" id="costoVariable2" placeholder="">
+ <input type="number" id="costoVariable3" placeholder="">
+ <input type="number" id="costoVariable4" placeholder="">
+ <input type="number" id="costoVariable5" placeholder="">
+ <input type="number" id="costoVariable6" placeholder="">
+ <br>
+ MARGEN DE CONTRIBUCION<input type="number" id="margencos1" placeholder="">
+  <input type="number" id="margencos2" placeholder="">
+  <input type="number" id="margencos3" placeholder="">
+  <input type="number" id="margencos4" placeholder="">
+  <input type="number" id="margencos5" placeholder="">
+  <input type="number" id="margencos6" placeholder="">
+ <br>
+ COSTOS FIJOS          <input type="number" id="costosFijos1" placeholder="">
+  <input type="number" id="costosFijos2" placeholder="">
+  <input type="number" id="costosFijos3" placeholder="">
+  <input type="number" id="costosFijos4" placeholder="">
+  <input type="number" id="costosFijos5" placeholder="">
+  <input type="number" id="costosFijos6" placeholder="">
+    <br>
+  UTILIDADES <BLOckquote></BLOckquote><input type="number" id="utilidad1" placeholder="">
+  <input type="number" id="utilidad2" placeholder="">
+  <input type="number" id="utilidad3" placeholder="">
+  <input type="number" id="utilidad4" placeholder="">
+  <input type="number" id="utilidad5" placeholder="">
+  <input type="number" id="utilidad6" placeholder="">
+  <br>
+  
+  <button onclick="datos()">Datos de tabla</button>
+<Script>
+function contribucionUnidad(){
+    // creamos variables
+    var numero1 = document.getElementById("Precio").value;
+    var numero2 = document.getElementById("costoV").value;
+    var numero3 =document.getElementById("costoF").value;
+    // definimos la operaion
+    var Resultado1 = numero1 - numero2
+    // imprimimos resultado de la operacion en contribucion por unidad
+    document.getElementById("contribucionU").value = Resultado1;
+
+}
+function margen(){
+    //definimos variables 
+    var numero1 = document.getElementById("Precio").value;
+    var numero2 = document.getElementById("costoV").value;
+    var numero3 =document.getElementById("costoF").value;
+    //definimos la operacion
+    var resultado2 = (numero3/(numero1 - numero2) )* (numero1 - numero2)
+    // imprimimos resultados
+    document.getElementById("MargenContribucion").value = resultado2;
+}
+
+function contribucionT(){
+    //definimos variables 
+    var numero1 = document.getElementById("Precio").value;
+    var numero2 = document.getElementById("costoV").value;
+    var numero3 =document.getElementById("costoF").value;
+    //definimos la operacion
+    var resultado3 = numero3/(numero1 - numero2)
+    // imprimimos resultados
+    document.getElementById("Unidades").value = resultado3;
+}
+
+function datos(){
+    //imprimimos los resultados de las unidades calculadas en el centro de la tabla
+    var numero1 = document.getElementById("Precio").value;
+    var numero2 = document.getElementById("costoV").value;
+    var numero3 =document.getElementById("costoF").value;
+    //definimos la operacion para los datos de unidades de la tabla 
+    var uni4 = numero3/(numero1 - numero2)
+    var uni1 = 0
+    var uni2 = (numero3/(numero1 - numero2))-200
+    var uni3 = (numero3/(numero1 - numero2))-100
+    var uni5 = (numero3/(numero1 - numero2))+100
+    var uni6 = (numero3/(numero1 - numero2))+200
+    // definimos los ingresos por ventas de la tabla de datos
+    var ventas4 = numero3/(numero1 - numero2)*numero1
+    var ventas1 = 0
+    var ventas2 = ((numero3/(numero1 - numero2))-200)*numero1
+    var ventas3 = ((numero3/(numero1 - numero2))-100)*numero1
+    var ventas5 = ((numero3/(numero1 - numero2))+100)*numero1
+    var ventas6 = ((numero3/(numero1 - numero2))+200)*numero1
+    //definimos los costso variables 
+    var costos4 = numero3/(numero1 - numero2)*numero2
+    var costos1 = 0
+    var costos2 = ((numero3/(numero1 - numero2))-200)*numero2
+    var costos3 = ((numero3/(numero1 - numero2))-100)*numero2
+    var costos5 = ((numero3/(numero1 - numero2))+100)*numero2
+    var costos6 = ((numero3/(numero1 - numero2))+200)*numero2
+
+     //definimos los margen por contribucion
+    var margenC4 = numero3/(numero1 - numero2)*(numero1-numero2)
+    var margenC1 = 0
+    var margenC2 = ((numero3/(numero1 - numero2))-200)*(numero1-numero2)
+    var margenC3 = ((numero3/(numero1 - numero2))-100)*(numero1-numero2)
+    var margenC5 = ((numero3/(numero1 - numero2))+100)*(numero1-numero2)
+    var margenC6 = ((numero3/(numero1 - numero2))+200)*(numero1-numero2)
+
+    //definimos las gancias o perdidas
+    var ganacias4 = margenC4 - numero3
+    var ganacias1 = margenC1 - numero3
+    var ganacias2 = margenC2 - numero3
+    var ganacias3 = margenC3 - numero3
+    var ganacias5 = margenC5 - numero3
+    var ganacias6 = margenC6 - numero3
+    // imprimimos resultados en unidades para la tabla
+    document.getElementById("Unidades4").value =uni4;
+    document.getElementById("Unidades1").value =uni1;
+    document.getElementById("Unidades2").value =uni2;
+    document.getElementById("Unidades3").value =uni3;
+    document.getElementById("Unidades5").value =uni5;
+    document.getElementById("Unidades6").value =uni6;
+    // imprimimos la segundo fila
+    document.getElementById("VENTA4").value =ventas4;
+    document.getElementById("VENTA1").value =ventas1;
+    document.getElementById("VENTA2").value =ventas2;
+    document.getElementById("VENTA3").value =ventas3;
+    document.getElementById("VENTA5").value =ventas5;
+    document.getElementById("VENTA6").value =ventas6;
+    //imprimimos fila 3
+    document.getElementById("costoVariable4").value =costos4;
+    document.getElementById("costoVariable1").value =costos1;
+    document.getElementById("costoVariable2").value =costos2;
+    document.getElementById("costoVariable3").value =costos3;
+    document.getElementById("costoVariable5").value =costos5;
+    document.getElementById("costoVariable6").value =costos6;
+
+    //imprimimos fila 4
+    document.getElementById("margencos4").value =margenC4;
+    document.getElementById("margencos1").value =margenC1;
+    document.getElementById("margencos2").value =margenC2;
+    document.getElementById("margencos3").value =margenC3;
+    document.getElementById("margencos5").value =margenC5;
+    document.getElementById("margencos6").value =margenC6;
+    //imprimimos la fila de costos fijos 
+    document.getElementById("costosFijos4").value =numero3;
+    document.getElementById("costosFijos1").value =numero3;
+    document.getElementById("costosFijos2").value =numero3;
+    document.getElementById("costosFijos3").value =numero3;
+    document.getElementById("costosFijos5").value =numero3;
+    document.getElementById("costosFijos6").value =numero3;
+    // imprimimos la ganancia o perdida 
+    document.getElementById("utilidad4").value =ganacias4;
+    document.getElementById("utilidad1").value =ganacias1;
+    document.getElementById("utilidad2").value =ganacias2;
+    document.getElementById("utilidad3").value =ganacias3;
+    document.getElementById("utilidad5").value =ganacias5;
+    document.getElementById("utilidad6").value =ganacias6;
+   
+}
+
+
+
+</Script>
+</body>
+</html>
